@@ -1,0 +1,89 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1>Mobile-first C2C Marketplaces</h1>
+
+
+<!-- start database html -->
+
+<div class="flex-table">
+ 
+  <div class="database_table_body">
+    <% @companies.each do |company| %>
+     <%= div_for company, :class => "large_rowBox" do %>
+      <div id="database_body">
+        <div class="database_table_image"><%= image_tag(company.logo_url, width:90, height:70) %>
+        </div>
+           <%= div_for company, :class => "rowBox" do %>
+        <div class="database_global"> 
+          <div class="database_title">
+              Name:
+          </div>  
+          <div class="database_input">
+              <%= company.name %>
+          </div>
+        </div>
+        <div class="database_global"> 
+          <div class="database_title">
+            Geography:
+          </div> 
+          <div class="database_input">
+            <%= company.geography %>
+          </div>
+        </div>
+        <div class="database_global"> 
+          <div class="database_title">
+            Hyperlocal:
+          </div>
+          <div class="database_input"> 
+            <%= company.hyperlocal %>
+          </div>
+        </div>
+        <div class="database_global"> 
+          <div class="database_title">
+            Commission:
+          </div> 
+          <div class="database_input">
+            <%= company.commission %>
+          </div>
+        </div>
+        <div class="database_global"> 
+          <div class="database_title">
+            Category:
+          </div>
+          <div class="database_input">
+          <%= company.category %>
+          </div>
+        </div>
+        <div class="database_global">
+          <div class="database_title">
+            Delivery:
+          </div>
+          <div class="database_input">
+            <%= company.delivery %>
+          </div>
+        </div>
+        <div class="modify_container">
+          <div class="modify">
+            <%= link_to 'Show', company %>
+          </div>
+          <div class="modify">
+            <%= link_to 'Edit', edit_company_path(company) %></div>
+          <div class="modify">
+            <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div> 
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
+
+<!-- end database layout -->
+
+<br>
+
+<%= link_to 'New Company', new_company_path %>
+

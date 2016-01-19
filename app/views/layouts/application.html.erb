@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>M1c2cmp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+    <div class="header">
+      <a href="#" class="hamburgermenu"></a>
+        <div class="nav">
+          <ul class="header_ul">
+            <li>
+              <a href="#main_content_2">Test2</a>
+            </li>
+            <li>
+              <a href="<span id="main_con"></span>tent_3">Test3</a>
+            </li>
+            <li>
+              <a href="#main_content_4">Test4</a>
+            </li>
+            <li>
+              <a href="/users">User</a>
+            </li>
+          </ul>
+        </div>  
+    </div>
+
+	<div class="database">
+		<%= yield %>
+	</div>
+</body>
+</html>

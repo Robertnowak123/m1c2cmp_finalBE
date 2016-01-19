@@ -1,0 +1,87 @@
+/*Download of GoogleAPIs for Navigation Menu*/
+
+@import url(
+  http://fonts.googleapis.com/css?family=Open+Sans: 400,300,600);
+
+/*Formatting of navigation bar*/
+
+.header {
+  float: left;
+  display: inline-block;
+  margin-left: 95px;
+  height: 65px;
+  width: 1200px;
+  background-color: #B22222;
+  position: fixed;
+  margin-top: -20px;
+  z-index: 10000;
+}
+
+.header_ul {
+  list-style-type:none;
+}
+
+.nav {
+  max-height: 0;
+  overflow: hidden;
+  
+  -webkit-transition: 0.4s; /*safari*/
+  -moz-transition: 0.4s; /*firefox*/
+  -ms-transition: 0.4s; /*internet explorer*/
+  -o-transition: 0.4s; /*opra*/
+  transition: 0.4s; /*general*/
+}
+
+.nav.active {
+  max-height: 15em;
+}
+
+ul {
+  display: inline-block;
+  width: 156px;
+  padding: 10px;
+  background: #B22222;
+  color: #fff;
+  z-index: 150;
+  margin-left: -10px;
+  margin-top: 50px;
+}
+
+li a {
+  display: block;
+  padding: 5px;
+  padding-left: 12px;
+}
+
+li a:hover {
+  background: #888;
+}
+
+.hamburgermenu {
+  position: absolute;
+  display: inline-block;
+  font-size: 32px;
+  font-weight: normal;
+  margin-top: 18px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  z-index: 150;
+}
+
+.hamburgermenu:before,.hamburgermenu:after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -50px;
+  display: inline-block;
+  width: 36px; /* Makes the pseudo elements clickable since we're using box-shadows */
+  height: 28px; /* Makes the pseudo elements clickable since we're using box-shadows */
+}
+
+.hamburgermenu:after {
+  height: 5px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 10px 0 0 white,
+              0 20px 0 0 white;
+}
