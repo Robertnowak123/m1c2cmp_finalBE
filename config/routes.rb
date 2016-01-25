@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users
   get 'imageupload/index'
 
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   get 'imageupload/create'
 
   get 'imageupload/destroy'
+
 
   resources :likes
   resources :users
