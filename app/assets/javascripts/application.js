@@ -15,7 +15,8 @@
 //= require turbolinks
 //= require_tree .
 
-$( document ).ready(function() {
+
+$(document).on('page:change', function(event){
   
 	$('.hamburgermenu').on('click', function() {
     	$(this).next().toggleClass("active");
@@ -45,7 +46,6 @@ $( document ).ready(function() {
         	"z-index": "1000",	
         	});
     });
-
 
 
 

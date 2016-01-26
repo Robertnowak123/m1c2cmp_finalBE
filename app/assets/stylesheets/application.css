@@ -201,14 +201,16 @@ li a:hover {
   display: block;
   position: absolute;
   right: 0;
+  z-index: 1000000000;
 }
 
-#login {
+#login, #logout {
   float: left;
   display: block;
   position: absolute;
   right: 0;
   margin-right: 70px;
+  z-index: 1000000000;
 }
 
 

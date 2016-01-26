@@ -35,9 +35,8 @@
     <% if user_signed_in? %>
 
      <div id="logout">
-     <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    </div>
-
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      </div>
     <% else %>
 
     <div id="register">
@@ -52,3 +51,5 @@
 
 </body>
 </html>
+
+
