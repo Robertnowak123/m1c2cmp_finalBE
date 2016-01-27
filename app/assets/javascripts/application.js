@@ -49,6 +49,8 @@ $(document).on('page:change', function(event){
 
 
 
+
+
 	// $('.database_table_image').click(function(){
 	// 	$('.database_global').toggleClass('visible');
 	// 	console.log('click');

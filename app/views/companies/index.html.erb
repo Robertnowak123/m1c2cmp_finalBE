@@ -30,7 +30,7 @@
 
 <div class="rank_by_geography">
   Rank by Hyperlocal
-  <div>
+  <div id="tag">
     <%= select_tag :company, options_for_select(Company.uniq.pluck(:hyperlocal)) do %>
       <% @companies.each do |company| %>
           <%= company.hyperlocal %>
@@ -45,7 +45,7 @@
   <div>
     <%= select_tag :company, options_for_select(Company.uniq.pluck(:commission)) do %>
       <% @companies.each do |company| %>
-          <%= company.commission %>
+       <%= company.commission %>
       <%end%>
     <% end %>
   </div>  
