@@ -152,7 +152,7 @@ li a:hover {
 }
 
 #database_body {
-  margin-top: 50px;
+  margin-top: 10px;
   margin-bottom: 50px;
   margin-left: 30px;
 }
@@ -192,11 +192,13 @@ li a:hover {
 .database_table_image {
   margin-left: 125px;
   border-width: 5px;
-  border-style: solid;
-  border-color: white;
+  border-style: solid;  
+  border-color: white; 
+  clear: both;
+  text-align: center;
 }
 
-#register {
+#register { 
   float: left;
   display: block;
   position: absolute;
@@ -209,10 +211,19 @@ li a:hover {
   display: block;
   position: absolute;
   right: 0;
-  margin-right: 70px;
+  margin-right: 80px;
   z-index: 1000000000;
 }
 
+.rank {
+  float: left;
+  display: inline-block;
+  border-style: solid;
+  margin: 5px;
+}
+
+.rank_by_name {
+}
 
 
 

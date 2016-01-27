@@ -3,8 +3,94 @@
 
 <h1>Mobile-first C2C Marketplaces</h1>
 
+<!-- start rank html -->
+
+
+<div class="rank_by_name">
+  Rank by Name
+  <select>
+      <% @companies.each do |company| %>
+        <%= content_tag(:option, class:"rank_by_name") do %>
+          <%= company.name %>
+        <%end%>
+      <% end %>
+    </option>
+  </select>  
+</div>
+
+<div class="rank_by_geography">
+  Rank by Geography
+  <select>
+      <% @companies.each do |company| %>
+        <%= content_tag(:option, class:"rank_by_geography") do %>
+          <%= company.geography %>
+        <%end%>
+      <% end %>
+    </option>
+  </select>  
+</div>
+
+<div class="rank_by_hyperlocal">
+  Rank by Hyperlocal
+  <select>
+      <% @companies.each do |company| %>
+        <%= content_tag(:option, class:"rank_by_hyperlocal") do %>
+          <%= company.hyperlocal %>
+        <%end%>
+      <% end %>
+    </option>
+  </select>  
+</div>
+
+<div class="rank_by_commission">
+  Rank by Hyperlocal
+  <select>
+      <% @companies.each do |company| %>
+        <%= content_tag(:option, class:"rank_by_commission") do %>
+          <%= company.commission %>
+        <%end%>
+      <% end %>
+    </option>
+  </select>  
+</div>
+
+
+<div class="rank_by_category">
+  Rank by Category
+  <select>
+      <% @companies.each do |company| %>
+        <%= content_tag(:option, class:"rank_by_category") do %>
+          <%= company.category %>
+        <%end%>
+      <% end %>
+    </option>
+  </select>  
+</div>
+
+<div class="rank_by_delivery">
+  Rank by Delivery
+  <select>
+      <% @companies.each do |company| %>
+        <%= content_tag(:option, class:"rank_by_delivery") do %>
+          <%= company.delivery %>
+        <%end%>
+      <% end %>
+    </option>
+  </select>  
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- end rank html -->
 
 <!-- start database html -->
+
 
 <div class="flex-table">
  
