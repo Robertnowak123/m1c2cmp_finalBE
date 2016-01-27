@@ -8,75 +8,70 @@
 
 <div class="rank_by_name">
   Rank by Name
-  <select>
+  <div>
+    <%= select_tag :company, options_for_select(Company.uniq.pluck(:name)) do %>
       <% @companies.each do |company| %>
-        <%= content_tag(:option, class:"rank_by_name") do %>
           <%= company.name %>
-        <%end%>
-      <% end %>
-    </option>
-  </select>  
+      <%end%>
+    <% end %>
+  </div>  
 </div>
 
 <div class="rank_by_geography">
   Rank by Geography
-  <select>
+  <div>
+    <%= select_tag :company, options_for_select(Company.uniq.pluck(:geography)) do %>
       <% @companies.each do |company| %>
-        <%= content_tag(:option, class:"rank_by_geography") do %>
-          <%= company.geography %>
-        <%end%>
-      <% end %>
-    </option>
-  </select>  
+          <%= company.name %>
+      <%end%>
+    <% end %>
+  </div>  
 </div>
 
-<div class="rank_by_hyperlocal">
+<div class="rank_by_geography">
   Rank by Hyperlocal
-  <select>
+  <div>
+    <%= select_tag :company, options_for_select(Company.uniq.pluck(:hyperlocal)) do %>
       <% @companies.each do |company| %>
-        <%= content_tag(:option, class:"rank_by_hyperlocal") do %>
           <%= company.hyperlocal %>
         <%end%>
       <% end %>
-    </option>
-  </select>  
+  </div>  
 </div>
 
+
 <div class="rank_by_commission">
-  Rank by Hyperlocal
-  <select>
+  Rank by Commission
+  <div>
+    <%= select_tag :company, options_for_select(Company.uniq.pluck(:commission)) do %>
       <% @companies.each do |company| %>
-        <%= content_tag(:option, class:"rank_by_commission") do %>
           <%= company.commission %>
-        <%end%>
-      <% end %>
-    </option>
-  </select>  
+      <%end%>
+    <% end %>
+  </div>  
 </div>
 
 
 <div class="rank_by_category">
   Rank by Category
-  <select>
+  <div>
+    <%= select_tag :company, options_for_select(Company.uniq.pluck(:category)) do %>
       <% @companies.each do |company| %>
-        <%= content_tag(:option, class:"rank_by_category") do %>
-          <%= company.category %>
-        <%end%>
-      <% end %>
-    </option>
-  </select>  
+          <%= company.category%>
+      <%end%>
+    <% end %>
+  </div>  
 </div>
 
 <div class="rank_by_delivery">
-  Rank by Delivery
-  <select>
+  Rank by Category
+  <div>
+    <%= select_tag :company, options_for_select(Company.uniq.pluck(:delivery)) do %>
       <% @companies.each do |company| %>
-        <%= content_tag(:option, class:"rank_by_delivery") do %>
-          <%= company.delivery %>
-        <%end%>
-      <% end %>
-    </option>
-  </select>  
+          <%= company.delivery%>
+      <%end%>
+    <% end %>
+  </div>  
 </div>
 
 <br>

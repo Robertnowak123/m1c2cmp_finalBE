@@ -71,4 +71,5 @@ class CompaniesController < ApplicationController
     def company_params
       params.require(:company).permit(:name, :geography, :hyperlocal, :commission, :category, :delivery, :logo)
     end
+
 end
