@@ -4,7 +4,14 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    companies = Company
+    filters = [:name]
+    filters.each do |filter|
+      if params.has_key?(filter.to_s)
+        companies.where(filter.to_s => params[filter])
+      end
+    end
+    @companies = companies.limit(10)
   end
 
   # GET /companies/1

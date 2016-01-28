@@ -9,7 +9,7 @@
 <div class="rank_by_name">
   Rank by Name
   <div>
-    <%= select_tag :company, options_for_select(Company.uniq.pluck(:name)) do %>
+    <%= select_tag :name, options_for_select(Company.uniq.pluck(:name)) do %>
       <% @companies.each do |company| %>
           <%= company.name %>
       <%end%>
@@ -19,19 +19,20 @@
 
 <div class="rank_by_geography">
   Rank by Geography
-  <div>
-    <%= select_tag :company, options_for_select(Company.uniq.pluck(:geography)) do %>
+  <div id="tag_geography"> 
+    <%= select_tag :geography, options_for_select(Company.uniq.pluck(:geography)) do %>
       <% @companies.each do |company| %>
-          <%= company.name %>
+          <%= company.geography %>
       <%end%>
     <% end %>
+
   </div>  
 </div>
 
-<div class="rank_by_geography">
+<div class="rank_by_hyperlocal">
   Rank by Hyperlocal
-  <div id="tag">
-    <%= select_tag :company, options_for_select(Company.uniq.pluck(:hyperlocal)) do %>
+  <div id="tag_hyperlocal">
+    <%= select_tag :hyperlocal, options_for_select(Company.uniq.pluck(:hyperlocal)) do %>
       <% @companies.each do |company| %>
           <%= company.hyperlocal %>
         <%end%>
@@ -43,7 +44,7 @@
 <div class="rank_by_commission">
   Rank by Commission
   <div>
-    <%= select_tag :company, options_for_select(Company.uniq.pluck(:commission)) do %>
+    <%= select_tag :commission, options_for_select(Company.uniq.pluck(:commission)) do %>
       <% @companies.each do |company| %>
        <%= company.commission %>
       <%end%>
@@ -55,7 +56,7 @@
 <div class="rank_by_category">
   Rank by Category
   <div>
-    <%= select_tag :company, options_for_select(Company.uniq.pluck(:category)) do %>
+    <%= select_tag :category, options_for_select(Company.uniq.pluck(:category)) do %>
       <% @companies.each do |company| %>
           <%= company.category%>
       <%end%>
@@ -66,7 +67,7 @@
 <div class="rank_by_delivery">
   Rank by Category
   <div>
-    <%= select_tag :company, options_for_select(Company.uniq.pluck(:delivery)) do %>
+    <%= select_tag :deli, options_for_select(Company.uniq.pluck(:delivery)) do %>
       <% @companies.each do |company| %>
           <%= company.delivery%>
       <%end%>
@@ -108,7 +109,7 @@
           <div class="database_title">
             Geography:
           </div> 
-          <div class="database_input">
+          <div class="database_input" data-geography="<%= company.geography %>">
             <%= company.geography %>
           </div>
         </div>
@@ -116,7 +117,7 @@
           <div class="database_title">
             Hyperlocal:
           </div>
-          <div class="database_input"> 
+          <div class="database_input" data-hyperlocal="<%= company.hyperlocal %>"> 
             <%= company.hyperlocal %>
           </div>
         </div>

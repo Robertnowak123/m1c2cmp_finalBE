@@ -44,11 +44,74 @@ $(document).on('page:change', function(event){
         $(this).css({
         	"border-color": "white",	
         	"z-index": "1000",	
-        	});
+        });
     });
 
 
+	$("select").bind("change", function() {
+		name = $(this).attr("name");
+		value = $(this).val();
+		selector = "[data-" + name + "='" + value + "']";
+		$("div.large_rowBox").hide();
+		$(selector).closest("div.large_rowBox").each(function(){
 
+			$(this).show();
+		});
+		console.log(selector);
+//		$("[data-geography='true']").closest("div.large_rowBox").toggle();
+//     	$(".database_table_image:not(." + this.value + ")").each(function(){
+//     	$(this).toggle();
+    });
+
+	$("#tag_hyperlocal").bind("change", function() {
+		$("[data-hyperlocal='true']").closest("div.large_rowBox").toggle();
+//     	$(".database_table_image:not(." + this.value + ")").each(function(){
+//     	$(this).toggle();
+    });
+
+// 	$("#tag_hyperlocal").bind("change", function() {
+// 		$("[data-hyperlocal='true']").closest("div.large_rowBox").toggle();
+// //     	$(".database_table_image:not(." + this.value + ")").each(function(){
+// //     	$(this).toggle();
+//     });    
+
+// 	$("#tag_hyperlocal").bind("change", function() {
+// 		$("[data-hyperlocal='true']").closest("div.large_rowBox").toggle();
+// //     	$(".database_table_image:not(." + this.value + ")").each(function(){
+// //     	$(this).toggle();
+//     });
+
+
+
+
+
+
+// });
+
+// 	$("#tag_geography").bind("change", function() {
+//     	$(".database_table_image:not(." + this.value + ")").each(function(){
+//     	$(this).toggle();
+//     });
+// });	
+
+// 	$("#tag_geography").bind("change", function() {
+//     	$(".database_table_image:not(." + this.value + ")").toggle();
+// });
+
+
+ //    var exists = false;
+	// $('#tag').click(function(){
+	// 	$('.database_input').each(function({
+ 
+ // 	var thevalue = 'value1';
+	// var exists = 0 != $('#tag option[value='+thevalue+']').length;
+	// var exists = false;
+	// 	$('#tag option').each(function(){
+ //    		if (this.value == 'bar') {
+ //        	exists = true;
+ //        	return false;
+ //    	}
+	// });
 
 
 	// $('.database_table_image').click(function(){
