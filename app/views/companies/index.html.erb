@@ -67,7 +67,7 @@
 <div class="rank_by_delivery">
   Rank by Category
   <div>
-    <%= select_tag :deli, options_for_select(Company.uniq.pluck(:delivery)) do %>
+    <%= select_tag :delivery, options_for_select(Company.uniq.pluck(:delivery)) do %>
       <% @companies.each do |company| %>
           <%= company.delivery%>
       <%end%>
@@ -101,7 +101,7 @@
           <div class="database_title">
               Name:
           </div>  
-          <div class="database_input">
+          <div id="name" class="database_input" data-name="<%= company.name %>">
               <%= company.name %>
           </div>
         </div>
@@ -109,7 +109,7 @@
           <div class="database_title">
             Geography:
           </div> 
-          <div class="database_input" data-geography="<%= company.geography %>">
+          <div id="geography" class="database_input" data-geography="<%= company.geography %>">
             <%= company.geography %>
           </div>
         </div>
@@ -117,7 +117,7 @@
           <div class="database_title">
             Hyperlocal:
           </div>
-          <div class="database_input" data-hyperlocal="<%= company.hyperlocal %>"> 
+          <div id="hyperlocal" class="database_input" data-hyperlocal="<%= company.hyperlocal %>"> 
             <%= company.hyperlocal %>
           </div>
         </div>
@@ -125,7 +125,7 @@
           <div class="database_title">
             Commission:
           </div> 
-          <div class="database_input">
+          <div id="commission" class="database_input" data-commission="<%= company.commission %>">
             <%= company.commission %>
           </div>
         </div>
@@ -133,7 +133,7 @@
           <div class="database_title">
             Category:
           </div>
-          <div class="database_input">
+          <div id="category" class="database_input" data-category="<%= company.category %>">
           <%= company.category %>
           </div>
         </div>
@@ -141,7 +141,7 @@
           <div class="database_title">
             Delivery:
           </div>
-          <div class="database_input">
+          <div id="delivery" class="database_input" data-delivery="<%= company.delivery %>">
             <%= company.delivery %>
           </div>
         </div>
