@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # load_and_authorize_resource
+  before_filter :authenticate_user!, :except => [:index, :show]
+  
 
   # GET /users
   # GET /users.json
@@ -71,4 +74,16 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :name, :email, :location, :user_likes)
     end
+    def current_user
+      User.new(session[:id])
+    end
+
+    helper_method :current_user
 end
+
+
+
+
+
+
+

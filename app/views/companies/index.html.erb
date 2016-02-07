@@ -7,7 +7,7 @@
 
 
 <div class="rank_by_name">
-  Rank by Name
+  Filter by Name
   <div>
     <%= select_tag :name, options_for_select(Company.uniq.pluck(:name)) do %>
       <% @companies.each do |company| %>
@@ -18,7 +18,7 @@
 </div>
 
 <div class="rank_by_geography">
-  Rank by Geography
+  Filter by Geography
   <div id="tag_geography"> 
     <%= select_tag :geography, options_for_select(Company.uniq.pluck(:geography)) do %>
       <% @companies.each do |company| %>
@@ -30,7 +30,7 @@
 </div>
 
 <div class="rank_by_hyperlocal">
-  Rank by Hyperlocal
+  Filter by Hyperlocal  
   <div id="tag_hyperlocal">
     <%= select_tag :hyperlocal, options_for_select(Company.uniq.pluck(:hyperlocal)) do %>
       <% @companies.each do |company| %>
@@ -42,7 +42,7 @@
 
 
 <div class="rank_by_commission">
-  Rank by Commission
+  Filter by Commission
   <div>
     <%= select_tag :commission, options_for_select(Company.uniq.pluck(:commission)) do %>
       <% @companies.each do |company| %>
@@ -54,7 +54,7 @@
 
 
 <div class="rank_by_category">
-  Rank by Category
+  Filter by Category
   <div>
     <%= select_tag :category, options_for_select(Company.uniq.pluck(:category)) do %>
       <% @companies.each do |company| %>
@@ -65,7 +65,7 @@
 </div>
 
 <div class="rank_by_delivery">
-  Rank by Category
+  Filter by Category
   <div>
     <%= select_tag :delivery, options_for_select(Company.uniq.pluck(:delivery)) do %>
       <% @companies.each do |company| %>
@@ -76,11 +76,17 @@
 </div>
 
 <br>
+
+
+<form>
+<input id="refresh_button" TYPE="button" onClick="history.go(0)" VALUE="Refresh Filters">
+</form>
+
+
 <br>
 <br>
 <br>
-<br>
-<br>
+
 
 
 <!-- end rank html -->
@@ -94,7 +100,8 @@
     <% @companies.each do |company| %>
      <%= div_for company, :class => "large_rowBox" do %>
       <div id="database_body">
-        <div class="database_table_image"><%= image_tag(company.logo_url, width:90, height:70) %>
+        <div class="database_table_image">
+          <%= image_tag(company.logo_url, width:90, height:70) %>
         </div>
            <%= div_for company, :class => "rowBox" do %>
         <div class="database_global"> 
@@ -146,10 +153,12 @@
           </div>
         </div>
         <div class="modify_container">
-          <div class="modify">
+          <div class="modify">         
+
             <%= link_to 'Show', company %>
           </div>
           <div class="modify">
+
             <%= link_to 'Edit', edit_company_path(company) %></div>
           <div class="modify">
             <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -167,5 +176,12 @@
 
 <br>
 
+
 <%= link_to 'New Company', new_company_path %>
+
+
+
+
+
+
 

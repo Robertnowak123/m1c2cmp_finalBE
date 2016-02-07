@@ -10,10 +10,11 @@ Rails.application.routes.draw do
 
   get 'imageupload/destroy'
 
+  # scope "/admin" do
+    resources :users
+  # end
   
-
   resources :likes
-  resources :users
   resources :companies
   # get 'welcome/index'
 

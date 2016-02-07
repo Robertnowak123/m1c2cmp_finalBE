@@ -16,6 +16,7 @@
 //= require_tree .
 
 
+
 $(document).on('page:change', function(event){
   
 	$('.hamburgermenu').on('click', function() {
@@ -46,6 +47,9 @@ $(document).on('page:change', function(event){
         	"z-index": "1000",	
         });
     });
+
+
+
 
 
 
@@ -114,13 +118,11 @@ $(document).on('page:change', function(event){
 		
 		// filters.push($(this).val());
 		filters.push(value);
-		var filtersum = filters.join();
+		var filtersum = filters.join(" ");
 
 
-		
-
-		$("div.large_rowBox").hide();
-		$(selector).closest("div.large_rowBox:contains('" + filtersum + "')").each(function(){
+		$("div.large_rowBox").hide();		
+		$(selector).closest("div.large_rowBox:contains('"+filtersum+"')").each(function(){
 	
 			$(this).show();	
 		}); 

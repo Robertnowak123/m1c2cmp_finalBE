@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!, :except => [:index, :show]
+  # load_and_authorize_resource
   # GET /companies
   # GET /companies.json
   def index
@@ -64,9 +65,13 @@ class CompaniesController < ApplicationController
     @company.destroy
     respond_to do |format|
       format.html { redirect_to companies_url, notice: 'Company was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { head :no_content }    
+
+      
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

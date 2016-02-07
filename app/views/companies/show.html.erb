@@ -1,39 +1,76 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
+<div class="show_large_rowBox">
 
-<p>
-  <strong>Geography:</strong>
-  <%= @company.geography %>
-</p>
+  <div class="show_image">
+    <%= image_tag(@company.logo_url, width:90, height:70) %>
+  </div>
 
-<p>
-  <strong>Hyperlocal:</strong>
-  <%= @company.hyperlocal %>
-</p>
+  <div class="show_rowBox">
 
-<p>
-  <strong>Commission:</strong>
-  <%= @company.commission %>
-</p>
+    <div class="show_small_rowBox">
+      <div class="show_small_title">
+        <strong>Name:</strong>
+      </div>
+      <div class="show_small_input">
+        <%= @company.name %>
+      </div>
+    </div>
 
-<p>
-  <strong>Category:</strong>
-  <%= @company.category %>
-</p>
+    <div class="show_small_rowBox">
+      <div class="show_small_title">
+        <strong>Geography:</strong>
+      </div>
+      <div class="show_small_input">
+        <%= @company.geography %>
+      </div>
+    </div>
 
-<p>
-  <strong>Delivery:</strong>
-  <%= @company.delivery.to_s %>
-</p>
+    <div class="show_small_rowBox">
+      <div class="show_small_title">
+        <strong>Hyperlocal:</strong>
+      </div>
+      <div class="show_small_input">
+        <%= @company.hyperlocal %>
+      </div>
+    </div>
 
-<p>
-  <strong>Logo:</strong>
-  <%= @company.logo.to_s %>
-</p>
+    <div class="show_small_rowBox">
+      <div class="show_small_title">
+        <strong>Commission:</strong>
+      </div>
+      <div class="show_small_input">
+        <%= @company.commission %>
+      </div>
+    </div>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+    <div class="show_small_rowBox">
+      <div class="show_small_title">
+        <strong>Category:</strong>
+      </div>
+      <div class="show_small_input">
+        <%= @company.category %>
+      </div>
+    </div>
+  
+    <div class="show_small_rowBox">
+      <div class="show_small_title">
+        <strong>Delivery:</strong>
+      </div>
+      <div class="show_small_input">
+        <%= @company.delivery.to_s %>
+      </div>
+    </div>
+
+
+    <div class="show_small_rowBox" id="show_edit">
+      <%= link_to 'Edit', edit_company_path(@company) %>
+    </div>
+    <div class="show_small_rowBox" id="show_back">
+      <%= link_to 'Back', companies_path %>
+    </div>
+
+  </div>
+</div>
+
+

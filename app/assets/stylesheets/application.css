@@ -206,12 +206,22 @@ li a:hover {
   z-index: 1000000000;
 }
 
-#login, #logout {
+#login {
   float: left;
   display: block;
   position: absolute;
   right: 0;
   margin-right: 80px;
+  z-index: 1000000000;
+}
+
+#logout {
+  float: left;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 20px;
   z-index: 1000000000;
 }
 
@@ -222,9 +232,64 @@ li a:hover {
   margin: 5px;
 }
 
+#refresh_button {
+  border-style: solid 10px;
+  border-radius: 15px;
+}
+
+.show_image {
+  margin-left: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
 
 
 
+.show_large_rowBox {
+  width: 300;
+  margin-left: 30%;
+
+}
+
+.show_rowBox {
+  width: 300;
+}
+
+.show_small_rowBox {
+  margin-top: 5px;
+  width: 350px;
+  text-align: left;
+}
+
+.show_small_title {
+  font-size: 12px;
+  font-weight: bold;
+  float: left;
+  width: 50px;
+  margin-left: 5px;
+
+}
+
+.show_small_input {
+  width: 150px;
+  margin-left: 100px;
+  display: inline-block;
+}
+
+#show_edit {
+  width: 50px;
+  float: left;
+  display: inline-block;
+  margin-left: 5px;
+
+}
+
+#show_back {
+  width: 50px;
+  float: left;
+  display: inline-block;
+  margin-left: 100px;
+}
 
 
 
