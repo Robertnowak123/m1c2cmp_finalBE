@@ -1,9 +1,11 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :verify_is_admin, only: [:edit, :destroy]
+
   # load_and_authorize_resource
   # GET /companies
-  # GET /companies.json
+  # GET /companies.json 
   def index
     companies = Company
     filters = [:name]
@@ -83,5 +85,9 @@ class CompaniesController < ApplicationController
     def company_params
       params.require(:company).permit(:name, :geography, :hyperlocal, :commission, :category, :delivery, :logo)
     end
+
+    def verify_is_admin
+      (current_user.nil?) ? redirect_to(companies_path) : (redirect_to(companies_path)) unless current_user.admin?
+    end 
 
 end
